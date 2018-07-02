@@ -1,0 +1,38 @@
+#!/bin/bash
+echo
+echo '-------- H-ENCORE HELPER V1.0 --------'
+echo
+echo 'Hecho por Lord_Friky.'
+echo 'Basado en HiyaCFW Helper de jerbear64.'
+echo
+echo '--------------------------------------'
+echo
+echo 'Ingresa tu llave:'
+read AIDkey
+echo
+echo 'Encriptando app...'
+echo
+echo '------------------- app -------------------'
+echo
+do shell script "psvimg-create -n app -K $AIDkey app PCSG90096/app"
+echo
+echo '------------------- appmeta -------------------'
+echo
+do shell script "psvimg-create -n appmeta -K $AIDkey appmeta PCSG90096/appmeta"
+echo
+echo '------------------- licence -------------------'
+echo
+do shell script "psvimg-create -n license -K $AIDkey license PCSG90096/license"
+echo
+echo '------------------- savedata -------------------'
+echo
+do shell script "psvimg-create -n savedata -K $AIDkey savedata PCSG90096/savedata"
+echo
+echo 'Por favor revisa los logs en búsqueda de algún error que se haya podido cometer.'
+echo 'Copia la carpeta PCSG90096 dentro de tu ruta configurada de apps de PS VITA en QCMA (comúnmente la encontrarás como PS Vita/APP/xxxx-tu-aid-xxxx/).'
+echo 'Finalmente copia la app de h-encore a tu dispositivo y estarás listo para disfrutar de HENkaku :)'
+echo
+echo 'Y recuerden amigos, eviten los tutoriales de NanospeedGamer ;)'
+echo '¡Hasta la próxima amigos! :D'
+echo 'Pulsa enter para salir...'
+read exit
