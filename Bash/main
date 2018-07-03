@@ -1,6 +1,6 @@
 #!/bin/bash
 echo
-echo '-------- H-ENCORE HELPER V1.0 --------'
+echo '-------- H-ENCORE HELPER V0.1 --------'
 echo
 echo 'Hecho por Lord_Friky.'
 echo 'Basado en HiyaCFW Helper de jerbear64.'
