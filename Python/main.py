@@ -5,15 +5,17 @@ import os
 import sys
 import subprocess
 
-print('\n-------- H-ENCORE HELPER V1.1 --------')
+print('\n-------- H-ENCORE HELPER V0.1 --------')
 print('\nHecho por Lord_Friky.')
 print('Basado en HiyaCFW Helper de jerbear64.')
 print('\n--------------------------------------')
 
 if os.name == 'nt':
     print('\nSistema operativo detectado: Windows!')
-else:
+elif os.name == 'posix':
     print('\nSistema operativo detectado: macOS!')
+else:
+    print('\nSistema operativo detectado: Otro')
 
 print('\nVerificando...')
 
@@ -75,7 +77,5 @@ else:
 print('\nPor favor revisa los logs en búsqueda de algún error que se haya podido cometer.')
 print('Copia la carpeta PCSG90096 dentro de tu ruta configurada de apps de PS VITA en QCMA (comúnmente la encontrarás como PS Vita/APP/xxxx-tu-aid-xxxx/).')
 print('Finalmente copia la app de h-encore a tu dispositivo y estarás listo para disfrutar de HENkaku :)')
-print('\nY recuerden amigos, eviten los tutoriales de NanospeedGamer ;)')
-print('¡Hasta la próxima amigos! :D')
 input('\nPulsa enter para salir...')
 sys.exit()
