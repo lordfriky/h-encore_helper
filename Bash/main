@@ -32,7 +32,5 @@ echo 'Por favor revisa los logs en búsqueda de algún error que se haya podido 
 echo 'Copia la carpeta PCSG90096 dentro de tu ruta configurada de apps de PS VITA en QCMA (comúnmente la encontrarás como PS Vita/APP/xxxx-tu-aid-xxxx/).'
 echo 'Finalmente copia la app de h-encore a tu dispositivo y estarás listo para disfrutar de HENkaku :)'
 echo
-echo 'Y recuerden amigos, eviten los tutoriales de NanospeedGamer ;)'
-echo '¡Hasta la próxima amigos! :D'
 echo 'Pulsa enter para salir...'
 read exit
