@@ -1,36 +1,43 @@
 #!/bin/bash
-echo
-echo '-------- H-ENCORE HELPER V0.1 --------'
-echo
-echo 'Hecho por Lord_Friky.'
-echo 'Basado en HiyaCFW Helper de jerbear64.'
-echo
-echo '--------------------------------------'
-echo
-echo 'Ingresa tu llave:'
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+echo $'\n--------------------------------------------------------------'
+echo '                     h-encore_helper v0.1'
+echo '                         Bash version'
+echo '--------------------------------------------------------------'
+echo $'\n                      Made by Lord_Friky'
+echo '           Inspired in HiyaCFW Helper by jerbear64.'
+echo $'\n--------------------------------------------------------------'
+echo $'\nEnter your key:'
 read AIDkey
-echo
-echo 'Encriptando app...'
-echo
-echo '------------------- app -------------------'
-echo
-do shell script "psvimg-create -n app -K $AIDkey app PCSG90096/app"
-echo
-echo '------------------- appmeta -------------------'
-echo
-do shell script "psvimg-create -n appmeta -K $AIDkey appmeta PCSG90096/appmeta"
-echo
-echo '------------------- licence -------------------'
-echo
-do shell script "psvimg-create -n license -K $AIDkey license PCSG90096/license"
-echo
-echo '------------------- savedata -------------------'
-echo
-do shell script "psvimg-create -n savedata -K $AIDkey savedata PCSG90096/savedata"
-echo
-echo 'Por favor revisa los logs en búsqueda de algún error que se haya podido cometer.'
-echo 'Copia la carpeta PCSG90096 dentro de tu ruta configurada de apps de PS VITA en QCMA (comúnmente la encontrarás como PS Vita/APP/xxxx-tu-aid-xxxx/).'
-echo 'Finalmente copia la app de h-encore a tu dispositivo y estarás listo para disfrutar de HENkaku :)'
-echo
-echo 'Pulsa enter para salir...'
+echo $'\nExtracting app...'
+./pkg2zip -x *.pkg
+echo $'\nTrimming app...'
+rm -r app/PCSG90096/resource/movie/*
+rm -r app/PCSG90096/resource/image/bg/*
+rm -r app/PCSG90096/resource/image/ev/*
+rm -r app/PCSG90096/resource/image/icon/*
+rm -r app/PCSG90096/resource/image/stitle/*
+rm -r app/PCSG90096/resource/image/tachie/*
+rm -r app/PCSG90096/resource/sound/bgm/*
+rm -r app/PCSG90096/resource/sound/se/*
+rm -r app/PCSG90096/resource/sound/sec/*
+rm -r app/PCSG90096/resource/sound/voice/*
+rm -r app/PCSG90096/resource/text/01/*
+echo $'\nMoving app files...'
+mv app/PCSG90096/* app/ux0_temp_game_PCSG90096_app_PCSG90096/
+cp app/ux0_temp_game_PCSG90096_app_PCSG90096/sce_sys/package/temp.bin license/ux0_temp_game_PCSG90096_license_app_PCSG90096/6488b73b912a753a492e2714e9b38bc7.rif
+echo $'\nPreparing h-encore app...'
+echo $'\n------------------- app -------------------\n'
+./psvimg-create -n app -K $AIDkey app PCSG90096/app
+echo $'\n------------------- appmeta -------------------\n'
+./psvimg-create -n appmeta -K $AIDkey appmeta PCSG90096/appmeta
+echo $'\n------------------- licence -------------------\n'
+./psvimg-create -n license -K $AIDkey license PCSG90096/license
+echo $'\n------------------- savedata -------------------\n'
+./psvimg-create -n savedata -K $AIDkey savedata PCSG90096/savedata
+echo $'\nDone!'
+echo $'\nCopy the PCSG90096 folder into /PS Vita/APP/xxx-your-aid-xxx/'
+echo "Finally copy the h-encore app into your device and you'll be ready to enjoy HENkaku :)"
+echo $'\nPress Enter to exit...'
 read exit
